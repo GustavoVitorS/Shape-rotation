@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shape Rotation icon">
+  <rect width="64" height="64" rx="14" fill="#050508"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8 54 24 48 50 20 56 8 31 18 12Z" stroke="#2468ff" stroke-width="2"/>
+    <path d="M32 14 49 26 44 45 23 50 14 31 21 17Z" stroke="#9c3cff" stroke-width="2" transform="rotate(10 32 32)"/>
+    <path d="M32 20 43 28 40 40 26 44 20 31 25 22Z" stroke="#ff2aa3" stroke-width="2" transform="rotate(22 32 32)"/>
+    <path d="M32 26 38 30 36 36 29 38 26 32 29 27Z" fill="#a8ff19" stroke="#ffe642" stroke-width="1.5" transform="rotate(35 32 32)"/>
+  </g>
+</svg>

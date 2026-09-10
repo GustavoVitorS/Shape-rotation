@@ -1,20 +1,108 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Shape Rotation V2 — a lightweight, responsive generative geometry animation built with HTML, CSS and Canvas 2D.">
+  <meta name="theme-color" content="#050508">
+  <meta name="color-scheme" content="dark">
+  <title>Shape Rotation V2</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <title>Shape rotation</title>
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <div class="container">
-    <canvas class="canvas canvas--shape js-canvas" width="500" height="500"></canvas>
-    <canvas class="canvas js-canvas-2" width="500" height="500"></canvas>
-  </div>
-  <script src="script.js"></script>
-</body>
+  <main class="experience" aria-label="Shape Rotation generative animation">
+    <canvas id="shape-canvas" aria-label="Animated generative neon geometry"></canvas>
 
+    <p id="fallback" class="fallback" role="status" hidden>
+      Your browser does not support this visualization.
+    </p>
+
+    <button
+      id="panel-toggle"
+      class="panel-toggle"
+      type="button"
+      aria-controls="control-panel"
+      aria-expanded="false"
+      aria-label="Open animation controls"
+      title="Controls"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <section id="control-panel" class="control-panel" aria-label="Animation controls" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">SHAPE ROTATION</p>
+          <h1>V2 Controls</h1>
+        </div>
+        <button id="panel-close" class="icon-button" type="button" aria-label="Close animation controls">×</button>
+      </div>
+
+      <div class="control-grid">
+        <label class="control-row" for="mode-select">
+          <span>Mode</span>
+          <select id="mode-select">
+            <option value="nexus">Nexus</option>
+            <option value="spiral">Spiral</option>
+            <option value="prism">Prism</option>
+            <option value="orbit">Orbit</option>
+          </select>
+        </label>
+
+        <label class="control-row" for="performance-select">
+          <span>Performance</span>
+          <select id="performance-select">
+            <option value="auto">Auto</option>
+            <option value="quality">Quality</option>
+            <option value="balanced">Balanced</option>
+            <option value="eco">Eco</option>
+          </select>
+        </label>
+
+        <label class="range-control" for="speed-range">
+          <span class="range-label"><span>Speed</span><output id="speed-output">100%</output></span>
+          <input id="speed-range" type="range" min="25" max="180" step="5" value="100">
+        </label>
+
+        <label class="range-control" for="detail-range">
+          <span class="range-label"><span>Detail</span><output id="detail-output">100%</output></span>
+          <input id="detail-range" type="range" min="60" max="140" step="5" value="100">
+        </label>
+
+        <label class="switch-row" for="interaction-toggle">
+          <span>
+            <strong>Pointer interaction</strong>
+            <small>Subtle depth and rotation response</small>
+          </span>
+          <input id="interaction-toggle" type="checkbox" checked>
+        </label>
+
+        <label class="switch-row" for="fps-toggle">
+          <span>
+            <strong>FPS monitor</strong>
+            <small>Hidden by default</small>
+          </span>
+          <input id="fps-toggle" type="checkbox">
+        </label>
+      </div>
+
+      <div class="action-grid">
+        <button id="pause-button" type="button">Pause</button>
+        <button id="fullscreen-button" type="button">Fullscreen</button>
+        <button id="reset-button" type="button">Reset</button>
+      </div>
+
+      <div class="panel-footer">
+        <span id="quality-status">AUTO · HIGH</span>
+        <span>Space: pause · Esc: close</span>
+      </div>
+    </section>
+
+    <output id="fps-meter" class="fps-meter" aria-live="off" hidden>60 FPS</output>
+  </main>
+</body>
 </html>
